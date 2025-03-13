@@ -8,16 +8,47 @@
 
 :root {
     --grey: #2f333a;
-    --dark-blue: #1b1b32;
-    --yellow: #ffe292;
+    --white: white;
+    --yellow: #ffe8a8;
   }
 
   body {
     display: flex;
-    flex-direction: column;
-    align-items: left;
+    width: 100%;
+    height: 100vh;
     font-family:  "Times New Roman", Times, serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--yellow);
     background-color: var(--grey);
+    
+  }
+
+  .input-container-left {
+    flex: 50%;
+    background-color: var(--grey);
+    gap: 10px;
+    padding: 200px 0;
+    text-align: center;
+
+  }
+
+  .result-container-right {
+    flex: 50%;
+    background-color: var(--yellow);
+    gap: 10px;
+    padding: 200px 0;
+    text-align: center;
+
+  }
+
+  .input-label {
+    display: block;
+  }
+
+  input {
+    margin: 10px 0 0 0;
+    width: 50%;
+    min-height: 2em;
+    background-color: var(--yellow);
+    color: var(--grey);
   }
