@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --grey: #2f333a;
+    --dark-blue: #1b1b32;
+    --yellow: #ffe292;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family:  "Times New Roman", Times, serif;
+    font-size: 3rem;
+    color: var(--yellow);
+    background-color: var(--grey);
+  }
