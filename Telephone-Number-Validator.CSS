@@ -52,3 +52,11 @@
     background-color: var(--yellow);
     color: var(--grey);
   }
+
+.check-btn, .clear-btn {
+    cursor: pointer;
+    width: 70px;
+    height: 30px;
+    color: var(--grey);
+    background-color: var(--yellow);
+}
