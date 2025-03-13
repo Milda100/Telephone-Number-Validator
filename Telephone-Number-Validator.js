@@ -3,6 +3,12 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const results = document.getElementById("results-div");
 
+const regex = /^1[0-9]{10}$|^[0-9]{10}$/g
+
+
+
+
+
 
 const isCorrectInput = (input) => {
 
@@ -12,4 +18,9 @@ const isCorrectInput = (input) => {
     }
 }
 
+// const clearResults = () => {
+//     results.innerHTML = "";
+// }
+
 checkBtn.addEventListener("click", isCorrectInput);
+clearBtn.addEventListener("click", clearResults);
