@@ -5,27 +5,29 @@ const results = document.getElementById("results-div");
 
 
 const checkInput = (userInput) => {
-
+    console.log("Function called!");
     if (userInput.value === "") {
         alert("Please provide a phone number");
-          return;
+        return;
     }
 
-    const countryCodeRegex = "^1\\s?";
-    const areaCodeRegex = "\d{3}|\\(\d{3}\\)";
-    const symbolRegex = "[-\\s]";
-    const phoneNoRegex = "\d{3}[-|\\s]?\d{4}$";
-
+    console.log("User input:", userInput.value);
+    const countryCodeRegex = "^(1\\s?)?";
+    const areaCodeRegex = "\\d{3}|\\(\\d{3}\\)";
+    const symbolRegex = "[-\\s]?";
+    const phoneNoRegex = "\\d{3}[-|\\s]?\\d{4}$";
+    
     const fullPhoneNoRegex = new RegExp(`${countryCodeRegex}${areaCodeRegex}${symbolRegex}${phoneNoRegex}`);
 
+    
+    console.log("Regex Test Result:", fullPhoneNoRegex.test(userInput.value));
     if (fullPhoneNoRegex.test(userInput.value)) {
         results.innerHTML = `<p>Valid US number: ${userInput.value}</p>`;
     } else {
         results.innerHTML = `<p>Invalid US number: ${userInput.value}</p>`;
     }
+};
 
-    
-}
 
 
 checkBtn.addEventListener("click", () => checkInput(userInput));
