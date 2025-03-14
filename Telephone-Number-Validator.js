@@ -3,8 +3,18 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const results = document.getElementById("results-div");
 
-const regex = /^1[0-9]{10}$|^[0-9]{10}$/g
+// const regex =   /^1\s    [0-9]{3}         -  [0-9]{3}-[0-9]{4}$
+//                 |^1\s    \([0-9]{3}\)    \s  [0-9]{3}-[0-9]{4}$
+//                 |^1      \([0-9]{3}\)    \s  [0-9]{3}-[0-9]{4}$
+//                 |^1\s    [0-9]{3}        \s  [0-9]{3}\s[0-9]{4}$
+//                 |^                           [0-9]{10}$
+//                 |^       [0-9]{3}        -   [0-9]{3}-[0-9]{4}$
+//                 |^       \([0-9]{3}\)        [0-9]{3}-[0-9]{4}$/
 
+const countryCodeRegex = /^1\s?/;
+const areaCodeRegex = /[0-9]{3}|\([0-9]{3}\)/;
+const symbolRegex = /-|\s/;
+const phoneNoRegex = 
 
 
 
