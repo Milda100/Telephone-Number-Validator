@@ -22,10 +22,11 @@ const checkInput = () => {
     
     console.log("Regex Test Result:", fullPhoneNoRegex.test(userInput.value));
     if (fullPhoneNoRegex.test(userInput.value)) {
-        results.innerHTML = `<div>Valid US number: ${userInput.value}</div>`;
+        results.innerHTML += `<div>Valid US number: ${userInput.value}</div>`;
     } else {
-        results.innerHTML = `<div>Invalid US number: ${userInput.value}</div>`;
+        results.innerHTML += `<div>Invalid US number: ${userInput.value}</div>`;
     }
+    userInput.value = "";
 };
 
 
