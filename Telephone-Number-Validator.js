@@ -18,10 +18,10 @@ const checkInput = (userInput) => {
 
     const fullPhoneNoRegex = new RegExp(`${countryCodeRegex}${areaCodeRegex}${symbolRegex}${phoneNoRegex}`);
 
-    if (fullPhoneNoRegex === userInput){
-        results.innerHTML = `<p>Valid US number: ${fullPhoneNoRegex}</p>`;
+    if (fullPhoneNoRegex.test(userInput.value) === userInput){
+        results.innerHTML = `<p>Valid US number: ${userInput.value}</p>`;
     } else {
-        results.innerHTML = `<p>Invalid US number: ${userInput}</p>`
+        results.innerHTML = `<p>Invalid US number: ${userInput.value}</p>`;
     }
 
     
@@ -31,5 +31,5 @@ const checkInput = (userInput) => {
 //     results.innerHTML = "";
 // }
 
-checkBtn.addEventListener("click", checkInput(userInput.value));
+checkBtn.addEventListener("click", () => checkInput(userInput));
 clearBtn.addEventListener("click", clearResults);
