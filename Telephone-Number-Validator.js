@@ -12,13 +12,13 @@ const checkInput = (userInput) => {
     }
 
     const countryCodeRegex = "^1\\s?";
-    const areaCodeRegex = "[0-9]{3}|\\([0-9]{3}\\)";
-    const symbolRegex = "-|\\s";
-    const phoneNoRegex = "[0-9]{3}[-|\\s]?[0-9]{4}$";
+    const areaCodeRegex = "\d{3}|\\(\d{3}\\)";
+    const symbolRegex = "[-\\s]";
+    const phoneNoRegex = "\d{3}[-|\\s]?\d{4}$";
 
     const fullPhoneNoRegex = new RegExp(`${countryCodeRegex}${areaCodeRegex}${symbolRegex}${phoneNoRegex}`);
 
-    if (fullPhoneNoRegex.test(userInput.value) === userInput){
+    if (fullPhoneNoRegex.test(userInput.value)) {
         results.innerHTML = `<p>Valid US number: ${userInput.value}</p>`;
     } else {
         results.innerHTML = `<p>Invalid US number: ${userInput.value}</p>`;
@@ -27,9 +27,9 @@ const checkInput = (userInput) => {
     
 }
 
-// const clearResults = () => {
-//     results.innerHTML = "";
-// }
 
 checkBtn.addEventListener("click", () => checkInput(userInput));
-clearBtn.addEventListener("click", clearResults);
+
+// const clearResults = () => {
+//     results.innerHTML = "";
+// };
