@@ -4,7 +4,7 @@ const clearBtn = document.getElementById("clear-btn");
 const results = document.getElementById("results-div");
 
 
-const checkInput = (userInput) => {
+const checkInput = () => {
     console.log("Function called!");
     if (userInput.value === "") {
         alert("Please provide a phone number");
@@ -22,16 +22,17 @@ const checkInput = (userInput) => {
     
     console.log("Regex Test Result:", fullPhoneNoRegex.test(userInput.value));
     if (fullPhoneNoRegex.test(userInput.value)) {
-        results.innerHTML = `<p>Valid US number: ${userInput.value}</p>`;
+        results.innerHTML = `<div>Valid US number: ${userInput.value}</div>`;
     } else {
-        results.innerHTML = `<p>Invalid US number: ${userInput.value}</p>`;
+        results.innerHTML = `<div>Invalid US number: ${userInput.value}</div>`;
     }
 };
 
 
+const clearResults = () => {
+    results.innerHTML = "";
+    userInput.value = "";
+};
 
 checkBtn.addEventListener("click", () => checkInput(userInput));
-
-// const clearResults = () => {
-//     results.innerHTML = "";
-// };
+clearBtn.addEventListener("click", clearResults);
