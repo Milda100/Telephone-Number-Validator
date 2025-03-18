@@ -10,7 +10,6 @@
     --grey: #2f333a;
     --white: white;
     --yellow: #ffe8a8;
-    /* --orange: #ffd359; */
   }
 
   body {
@@ -22,23 +21,20 @@
     
   }
 
-  .input-container-left {
-    flex: 50%;
-    background-color: var(--grey);
-    gap: 10px;
+  .input-container-left, .result-container-right {
+    flex: 1;
     padding: 200px 0;
     text-align: center;
-    color: var(--yellow);
+  }
 
+  .input-container-left {
+    background-color: var(--grey);
+    color: var(--yellow);
   }
 
   .result-container-right {
-    flex: 50%;
+    flex: 1;
     background-color: var(--yellow);
-    gap: 10px;
-    padding: 200px 0;
-    text-align: center;
-
   }
 
   .input-label {
@@ -59,9 +55,4 @@
     height: 30px;
     color: var(--grey);
     background-color: var(--yellow);
-  
-  }
-
-  .result-container-right {
-    color: var(--grey);
   }
